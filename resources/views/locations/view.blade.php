@@ -121,6 +121,73 @@
       </div> <!--/.box-->
 
 
+    <div class="box box-default">
+        <div class="box-header with-border">
+          <div class="box-heading">
+            <h3 class="box-title">{{ trans('general.accessories') }}</h3>
+          </div>
+        </div>
+        <div class="box-body">
+              <div class="table table-responsive">
+
+                  <table
+                          data-columns="{{ \App\Presenters\AssetPresenter::dataTableLayout() }}"
+                          data-cookie-id-table="accessoriesTable"
+                          data-pagination="true"
+                          data-id-table="accessoriesTable"
+                          data-search="true"
+                          data-side-pagination="server"
+                          data-show-columns="true"
+                          data-show-export="true"
+                          data-show-refresh="true"
+                          data-sort-order="asc"
+                          id="accessoriesTable"
+                          class="table table-striped snipe-table"
+                          data-url="{{route('api.accessories.index', ['location_id' => $location->id]) }}"
+                          data-export-options='{
+                              "fileName": "export-locations-{{ str_slug($location->name) }}-accessories-{{ date('Y-m-d') }}",
+                              "ignoreColumn": ["actions","image","change","checkbox","checkincheckout","icon"]
+                              }'>
+                  </table>
+
+              </div><!-- /.table-responsive -->       
+            </div><!-- /.box-body -->
+          </div> <!--/.box-->
+
+
+      <div class="box box-default">
+        <div class="box-header with-border">
+          <div class="box-heading">
+            <h3 class="box-title">{{ trans('general.consumables') }}</h3>
+          </div>
+        </div>
+        <div class="box-body">
+              <div class="table table-responsive">
+
+                  <table
+                          data-columns="{{ \App\Presenters\AssetPresenter::dataTableLayout() }}"
+                          data-cookie-id-table="consumablesTable"
+                          data-pagination="true"
+                          data-id-table="consumablesTable"
+                          data-search="true"
+                          data-side-pagination="server"
+                          data-show-columns="true"
+                          data-show-export="true"
+                          data-show-refresh="true"
+                          data-sort-order="asc"
+                          id="consumablesTable"
+                          class="table table-striped snipe-table"
+                          data-url="{{route('api.consumables.index', ['location_id' => $location->id]) }}"
+                          data-export-options='{
+                              "fileName": "export-locations-{{ str_slug($location->name) }}-consumable-{{ date('Y-m-d') }}",
+                              "ignoreColumn": ["actions","image","change","checkbox","checkincheckout","icon"]
+                              }'>
+                  </table>
+
+              </div><!-- /.table-responsive -->       
+            </div><!-- /.box-body -->
+          </div> <!--/.box-->
+
   </div><!--/.col-md-9-->
 
   <div class="col-md-3">
